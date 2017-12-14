@@ -53,9 +53,19 @@
 										<li>Find a viable marble dropping mechanism</li>
 										<li>Construct a working prototype capable of playing songs with multiple notes</li>
 									</ul></i>
-									<p><b>In order to play nice music we need a nice instrument.</b> We decided make, not buy, an instrument in order to both reduce cost to us and as a fun challenge.  At the beginning, we weren’t sure what material would be best, so we manufactured a range of possible instruments and rates them on their cost, pitch, and timbre. </p>
+									<p><b>In order to play nice music we need a nice instrument.</b> We decided make, not buy, an instrument in order to both reduce cost to us and as a fun challenge.  At the beginning, we weren’t sure what material would be best, so we manufactured a range of possible instruments and rated them on their cost, pitch, and timbre. </p>
 									<span class="sprint1instruments"><img src="images/sprint1instruments.png" alt="A photo of our instruments prototypes."/></span>
+<p>We decided on metal pipes for our notes because of their high marks in every category we tested</p>
+<img src="images/tubes.jpg" alt="A photo of our metal tubes."/><p>
+Additionally, we experimented with the actuation that causes the dropping of the marbles. For this sprint we tested using a stepper to control both when a marble drops and where the marble goes. 
+</p>
+<img src="images/dropper.jpg" alt="A photo of our dropper."/>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qOTImKK5Mck" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
+<p>
+As you can see our device is not much yet, with only 2 notes and a slow servo motor, but we accomplished our sprint goals of exploring the materials for making notes and testing out some actuation.
+</p>
 
 									<hr class="major" />
 
@@ -72,23 +82,24 @@ So for Sprint  2 we wanted to manufacture a prototype that:</p><ul>
 <li>Plays several tuned notes</li>
 </ul><p>
 Without any adieu, here it is in all it’s glory!<p>
-INSERT IMAGE HERE</p>
+<img src="images/sprint2.png" alt="A photo of our Sprint 2."/></p>
 <p>
 You’re probably wondering how it plays music. Well if you will refer to the images below, we’ll tell you.</p>
 <ol>
 <li>Song Sheet: We designed a Python program to get a music MIDI files and convert it into a SVG that we can cut out to mechanically represent the song, as shown below.</li>
-
-
-
+<img src="images/songsheet1.jpg" alt="A photo of our Song Sheet."/>
+<img src="images/songsheet2.png" alt="A photo of our digital song sheet."/>
+<img src="images/sprint22.png" alt="A photo of our Sprint 2."/>
 <li>Marble Reservoir: Marbles are contained in the reservoir so that as the song sheet passes under it, they fall into the holes of the sheet.
 </li><li>Free spinning wheels: The wheels will along the song sheet to slide into the slot under the reservoir
 </li><li>Stepper Motor: The stepper motor will drive the song sheet so that it can be consistently fed into the slot. We went through a large amount of trial and error to get it to spin reliably, changing from using an Arduino Motor Shield, to an H Bridge Motor Driver, to an actual stepper motor driver.
+<img src="images/control.png" alt="A photo of our Sprint 2."/>
 </li><li>
 Marble Drop Holes: After the sheet passes the reservoir, it passes over the drop holes, where marbles in the sheet will fall towards ramps below.
 </li><li>Marble Ramps: Marbles will enter ramps corresponding to each note, which will lead the marble the right spot on the right pipe.
 </li><li>Tuned Pipe: The marbles will bounce off the pipe producing a melody.
 </li><li>Marble Collection Tray: After ricocheting off of the pipes, marbles are collected and  routed towards the collection tray where they can be accessed for later use.
-</li>
+<img src="images/sprint23.png" alt="A photo of our Sprint 2."/></li>
 </ol>
 <p>
 Well, this was the intention of each mechanism. As in life, things do not always turn out the way you expect.  <a href="https://www.youtube.com/watch?v=rFCDxCn7umE">Here’s Ode to Joy</a>:
@@ -111,6 +122,7 @@ Beyond that, we wanted to Manufacture a prototype that:</p>
 </ul>
 <p>Fixing Grip Issues:</p>
 <p>After experimenting with wheels and strings as methods of driving the sheet, we decide that neither are sufficient for our purposes, with wheel not getting a good grip and the string being too jerky and hard to control. Consequently, in sprint 3 we switched to a rack and pinion system to control the sheet, as shown below.</p>
+<img src="images/acrylic.png" alt="A photo of our rack and pinion."/>
 <p>
 This enables us to both get a better grip on the sheet as well as control it with more spatial precision.
 </p>
@@ -119,8 +131,9 @@ Recycling Marbles:</p>
 <p>Next, we focussed on our next goal of recycling marbles so the machine can keep playing without having to be reloaded. Thi requires both marbles to be routed to an appropriate spot after hitting pipes, for marbles to be brought back to the top and subsequently be loaded into the reservoir.
 </p><p>
 The marble routing was trivial, we simply angled our bottom plate and added ramp so all the marbles would collect in a bottom corner of the machine.</p>
+<img src="images/corner.png" alt="A photo of our Sprint 3 Corner."/>
 <p>The next step was more difficult. We needed a good way to bring the marbles back to the top at a fast enough rate that they could keep up with a song sheet. The two likely option are either a belt (possibly magnetic) that would take marbles back up to the top and a water wheel that would keep the marbles in compartments that release them at the top. As you can see from the picture below, we ended up going with the wheel due to its high marble capacity… and it just looks so cool.
-</p>
+<img src="images/belt.png" alt="A photo of a belt."/><img src="images/wheel.png" alt="A photo of our Sprint 3 wheel."/></p>
 After the wheel take the marbles back up, it deposits them into a collection tray that feed back into the reservoir to be used again.
 <p>
 
