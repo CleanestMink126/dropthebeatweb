@@ -1,0 +1,144 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Sprints</title>
+		<meta charset="utf-8" />
+		<link rel="icon" href="marble.jpg">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="template_assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+							<!-- Header -->
+								<header id="header" align="right">
+									<a href="index.html" class="logo"><strong>DroptheBeat</strong></a>
+								</header>
+
+							<!-- Content -->
+								<section>
+
+
+									<h2><b>Goal:</b></h2>
+<h3><b>Create a machine that plays music using marbles, inspired by the Wintergatan marble machine</b></h3><ul>
+<li>Capable of playing any song</li>
+<li>Aesthetically pleasing and mechanically complex</li>
+<li>stores songs using mechanical memory</li></ul>
+</p>
+<hr class="major" />
+<h2>Sprint 2</h2>
+									<p>
+After getting a good feel for our system in Sprint 1 we decided to pivot on a major design aspect of our machine, namely its actuation. As you can see in Sprint 1 we routed marbles with a servo that could open a gate and let a marble through. This is effective for example tune playing; however there are several limitations: many servos are required for a large range of notes, servos are severely limited in speed and therefore lack the temporal precision needed to play a song, and all the notes would have to be controlled by a computer rather than a microcontroller if you wanted to play multiple songs.
+So we decided to pivot.
+</p><p>
+We decided that if the notes of the song were stored physically rather than in a computer, we could create a device that can play faster songs, be mechanically cooler, and more aesthetically pleasing.
+</p><p>
+So for Sprint  2 we wanted to manufacture a prototype that:</p><ul>
+<li>Stores songs using mechanical memory</li>
+<li>Feed marbles into mechanical memory</li>
+<li>Plays several tuned notes</li>
+</ul><p>
+Without any adieu, here it is in all it’s glory!<p>
+<img src="images/sprint2.png" alt="A photo of our Sprint 2."/></p>
+<p>
+You’re probably wondering how it plays music. Well if you will refer to the images below, we’ll tell you.</p>
+<ol>
+<li>Song Sheet: We designed a Python program to get a music MIDI files and convert it into a SVG that we can cut out to mechanically represent the song, as shown below.</li>
+<img src="images/songsheet1.jpg" alt="A photo of our Song Sheet."/>
+<img src="images/songsheet2.png" alt="A photo of our digital song sheet."/>
+<img src="images/sprint22.png" alt="A photo of our Sprint 2."/>
+<li>Marble Reservoir: Marbles are contained in the reservoir so that as the song sheet passes under it, they fall into the holes of the sheet.
+</li><li>Free spinning wheels: The wheels will along the song sheet to slide into the slot under the reservoir
+</li><li>Stepper Motor: The stepper motor will drive the song sheet so that it can be consistently fed into the slot. We went through a large amount of trial and error to get it to spin reliably, changing from using an Arduino Motor Shield, to an H Bridge Motor Driver, to an actual stepper motor driver.
+<img src="images/control.png" alt="A photo of our Sprint 2."/>
+</li><li>
+Marble Drop Holes: After the sheet passes the reservoir, it passes over the drop holes, where marbles in the sheet will fall towards ramps below.
+</li><li>Marble Ramps: Marbles will enter ramps corresponding to each note, which will lead the marble the right spot on the right pipe.
+</li><li>Tuned Pipe: The marbles will bounce off the pipe producing a melody.
+</li><li>Marble Collection Tray: After ricocheting off of the pipes, marbles are collected and  routed towards the collection tray where they can be accessed for later use.
+<img src="images/sprint23.png" alt="A photo of our Sprint 2."/></li>
+</ol>
+<p>
+Well, this was the intention of each mechanism. As in life, things do not always turn out the way you expect.  <a href="https://www.youtube.com/watch?v=rFCDxCn7umE">Here’s Ode to Joy</a>:
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rFCDxCn7umE?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+<br><br><p>As you might notice from the video, our stepper motor is not where it is supposed to be. Also, there is string connected to a screw in our song sheet. As we discovered after fabrication, wheels, especially the one driven by the stepper motor, do not get enough grip on the song sheet to reliably move it. As a quick fix, we attached a string to the sheet and to the stepper to feed it through.
+</p>
+
+									<hr class="major" />
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+								<!-- Menu -->
+									<nav id="menu">
+										<header class="major">
+											<h2>Menu</h2>
+										</header>
+										<ul>
+											<li><a href="homepage.html">Homepage</a></li>
+											<li>
+												<span class="opener">Design</span>
+												<ul>
+													<li><a href="overall.html">Overall</a></li>
+													<li><a href="mechanical.html">Mechanical</a></li>
+													<li><a href="electrical.html">Electrical</a></li>
+													<li><a href="software.html">Software</a></li>
+												</ul>
+											</li>
+											<li>
+												<span class="opener">Timeline</span>
+												<ul>
+													<li><a href="sprint1.html">Sprint 1</a></li>
+													<li><a href="sprint2.html">Sprint 2</a></li>
+													<li><a href="sprint3.html">Sprint 3</a></li>
+													<li><a href="sprint4.html">Final Sprint</a></li>
+												</ul>
+											</li>
+											<li><a href="#">Team</a></li>
+											<li><a href="#">Budget</a></li>
+										</ul>
+									</nav>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="template_assets/js/jquery.min.js"></script>
+			<script src="template_assets/js/skel.min.js"></script>
+			<script src="template_assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="template_assets/js/main.js"></script>
+
+	</body>
+</html>
