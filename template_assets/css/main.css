@@ -2169,11 +2169,13 @@
 	h7 {
 		float: right;
 		font-size: 1.75em;
+		line-height: 0.7;
 	}
 
 	h8 {
 		font-weight: 100;
 		align: right;
+		line-height: 1.1;
 		font-size: 1.1em;
 	}
 
