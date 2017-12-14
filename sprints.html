@@ -1,13 +1,10 @@
-<!DOCTYPE HTML>
-<!--
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+﻿<!DOCTYPE HTML>
+
 <html>
 	<head>
 		<title>Sprints</title>
 		<meta charset="utf-8" />
+		<link rel="icon" href="marble.jpg">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="template_assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="template_assets/css/main.css" />
@@ -63,12 +60,91 @@
 									<hr class="major" />
 
 									<h2>Sprint 2</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<p>
+After getting a good feel for our system in Sprint 1 we decided to pivot on a major design aspect of our machine, namely its actuation. As you can see in Sprint 1 we routed marbles with a servo that could open a gate and let a marble through. This is effective for example tune playing; however there are several limitations: many servos are required for a large range of notes, servos are severely limited in speed and therefore lack the temporal precision needed to play a song, and all the notes would have to be controlled by a computer rather than a microcontroller if you wanted to play multiple songs. 
+So we decided to pivot.
+</p><p>
+We decided that if the notes of the song were stored physically rather than in a computer, we could create a device that can play faster songs, be mechanically cooler, and more aesthetically pleasing. 
+</p><p>
+So for Sprint  2 we wanted to manufacture a prototype that:</p><ul>
+<li>Stores songs using mechanical memory</li>
+<li>Feed marbles into mechanical memory</li>
+<li>Plays several tuned notes</li>
+</ul><p>
+Without any adieu, here it is in all it’s glory!<p>
+INSERT IMAGE HERE</p>
+<p>
+You’re probably wondering how it plays music. Well if you will refer to the images below, we’ll tell you.</p>
+<ol>
+<li>Song Sheet: We designed a Python program to get a music MIDI files and convert it into a SVG that we can cut out to mechanically represent the song, as shown below.</li>
+
+
+
+<li>Marble Reservoir: Marbles are contained in the reservoir so that as the song sheet passes under it, they fall into the holes of the sheet.
+</li><li>Free spinning wheels: The wheels will along the song sheet to slide into the slot under the reservoir
+</li><li>Stepper Motor: The stepper motor will drive the song sheet so that it can be consistently fed into the slot. We went through a large amount of trial and error to get it to spin reliably, changing from using an Arduino Motor Shield, to an H Bridge Motor Driver, to an actual stepper motor driver.
+</li><li>
+Marble Drop Holes: After the sheet passes the reservoir, it passes over the drop holes, where marbles in the sheet will fall towards ramps below.
+</li><li>Marble Ramps: Marbles will enter ramps corresponding to each note, which will lead the marble the right spot on the right pipe.
+</li><li>Tuned Pipe: The marbles will bounce off the pipe producing a melody.
+</li><li>Marble Collection Tray: After ricocheting off of the pipes, marbles are collected and  routed towards the collection tray where they can be accessed for later use.
+</li>
+</ol>
+<p>
+Well, this was the intention of each mechanism. As in life, things do not always turn out the way you expect.  <a href="https://www.youtube.com/watch?v=rFCDxCn7umE">Here’s Ode to Joy</a>:
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rFCDxCn7umE?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+<br><br><p>As you might notice from the video, our stepper motor is not where it is supposed to be. Also, there is string connected to a screw in our song sheet. As we discovered after fabrication, wheels, especially the one driven by the stepper motor, do not get enough grip on the song sheet to reliably move it. As a quick fix, we attached a string to the sheet and to the stepper to feed it through. 
+</p>
 
 									<hr class="major" />
 
 									<h2>Sprint 3</h2>
+									<p>Addressing the issues from the last sprint:</p><p>
+Our top priority for this sprint was fixing the wheel grip issue from the last sprint. If we do not have a song sheet feeding in on its own, we do not have a product. 
+</p><p>
+Beyond that, we wanted to Manufacture a prototype that:</p>
+<ul>
+<li>Recycles marbles after they hit pipes</li>
+<li>Can play variable note durations</li>
+<li>Can play an entire octave of notes</li>
+</ul>
+<p>Fixing Grip Issues:</p>
+<p>After experimenting with wheels and strings as methods of driving the sheet, we decide that neither are sufficient for our purposes, with wheel not getting a good grip and the string being too jerky and hard to control. Consequently, in sprint 3 we switched to a rack and pinion system to control the sheet, as shown below.</p>
+<p>
+This enables us to both get a better grip on the sheet as well as control it with more spatial precision.
+</p>
+<p>
+Recycling Marbles:</p>
+<p>Next, we focussed on our next goal of recycling marbles so the machine can keep playing without having to be reloaded. Thi requires both marbles to be routed to an appropriate spot after hitting pipes, for marbles to be brought back to the top and subsequently be loaded into the reservoir.
+</p><p>
+The marble routing was trivial, we simply angled our bottom plate and added ramp so all the marbles would collect in a bottom corner of the machine.</p>
+<p>The next step was more difficult. We needed a good way to bring the marbles back to the top at a fast enough rate that they could keep up with a song sheet. The two likely option are either a belt (possibly magnetic) that would take marbles back up to the top and a water wheel that would keep the marbles in compartments that release them at the top. As you can see from the picture below, we ended up going with the wheel due to its high marble capacity… and it just looks so cool. 
+</p>
+After the wheel take the marbles back up, it deposits them into a collection tray that feed back into the reservoir to be used again.
+<p>
+
+<p>
+Since the CAD was designed in an intelligent way, scaling up to an octave was trivial. But since we had to recut all parts of the device we did not have enough time to solve our third goal of variable song sheet speed. Instead we leave room extra space in the cut sheet for longer notes. 
+</p><p>
+Finally, here is the final device assembled!
+</p>
+Looks impressive doesn’t it? Good, cause it doesn’t work.</p><p>
+Unfortunately after finally assembling the device at the end of sprint three, we found that it did not play beautiful melodies like we hoped for 3 big reasons:</p><ol>
+<li>We cut the ramps on the inside out of the wrong material, so we had to sand them down to get them to fit. This imprecise sanding caused variability in ramp position which led to marbles missing their notes</li>
+<li>Since we were so busy with fabrication and  assembly we took a shortcut in mounting the pipes, holding them all at the same points rather than at ¼ and ¾ points along the pipe (the points that cause the best resonation). This caused some pipes to resonate very poorly and therefore be almost inaudible in the song. </li>
+<li>Due to size and position of some of the dividers in the marble reservoir, marbles would get caught on each other. This caused marbles to not fall into some holes on the sheet and therefore not be represented in the song. </li>
+</ol><p>
+Additionally, the mechanism to reroute marbles to the top was non-functional for 3 reasons:</p><ol>
+<li>The collection ramps at the bottom of the machine were too shallow so marbles would not roll down correctly</li>
+<li>We could not get the wheel to turn with the stepper motor we had, due to it requiring more current and voltage than we could supply</li>
+<li>The marbles fell out of our wheel at the wrong time and would not get caught to get rerouted into the feeding mechanism.</li>
+</ol>
+</p>
+
+									<hr class="major" />
+									
+									<h2>Sprint 4</h2>
 									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
 
