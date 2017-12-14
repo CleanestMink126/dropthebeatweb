@@ -31,39 +31,48 @@
 
 									<hr class="major" />
 									<p>
+										<header>
+											<h2>MIDI to Cut File:</h2>
+										</header>
 
-										Software:
-										Repo:
-										https://github.com/natesampo/DropTheBeat
-
-										MIDI to Cut File:
 										In order to store the songs in mechanical memory, specifically a song sheet that marbles can drop into, we need a program that can automatically turn a MIDI file into a song sheet of appropriate proportions that can fed into the machine. Without a good program, we would be stuck manually adding holes to a song sheet for hours, most likely with a high degree of human error.
 										So, using the python libraries <a href="https://mido.readthedocs.io/en/latest/">MIDO</a> and <a href="https://pythonhosted.org/svgwrite/">svgwrite</a>, we designed a program to go through a desired midi file and generate an SVG file with hole placement corresponding to the notes of the song.
 
-										Honey Comb:
+										<header>
+											<h2>Honey Comb:</h2>
+										</header>
+
 										Initially, the logical way to encode notes into the sheet is to have one hole slot per note. Every time a note gets played in the song, a corresponding hole is put in the cutsheet. This is helpful, but suppose we want to play a song on a full octave, 13 notes, and we want to play a minute, feasibly 100 notes. That makes the length of the song sheet over 10 times the width and with ¼ inch marbles 25 inches long (not including any margins we would want on the sheet). That is already longer than a full sheet that would fit onto a laser cutter bed. So we have too much length on the song sheet to a small amount of width.
 										To resolve this problem we cut holes in a honeycomb pattern as shown below. With this design we have two holes per note which works better with the thickness of our pipes. This doubles the width of the sheet while cutting the length in half.
 										<br>
-										<img src="images/soft1.png" alt="" width = "400"/>
-										<span class="image main" width = "400"><img src="images/soft2.png" alt=""/></span>
+										<img src="images/soft2.png" alt="" height = "700"/>
+										<img src="images/soft1.png" alt="" width = "600"/>
 
-										Considerations:
+
+
+										<header>
+											<h2>Considerations:</h2>
+										</header>
+
 										This program needs to integrate flawlessly with a mechanical system with parameters stored elsewhere, so we needed to account for:
-										Hole Size
-										Space Between Holes
-										Line Thickness
-										Horizontal Border Space
-										Vertical Border Space
-										Length of Notes
-										Note Range
-										Number of Notes to Include
-										Placement of Notes
+										<li>Hole Size</li>
+										<li>Space Between Holes</li>
+										<li>Line Thickness</li>
+										<li>Horizontal Border Space</li>
+										<li>Vertical Border Space</li>
+										<li>Length of Notes</li>
+										<li>Note Range</li>
+										<li>Number of Notes to Include</li>
+										<li>Placement of Notes</li>
 
-										Here is an excerpt from Ode to Joy without a honeycomb pattern and a 5 note range and Megalovania with a honeycomb pattern and  a full octave range. If you want to explore more of our MIDI code, checkout the github repo <a href="https://github.com/natesampo/DropTheBeat/tree/master/writeToSVG">here</a>.
-
+										Here is an excerpt from Ode to Joy without a honeycomb pattern and a 5 note range.
 										<span class="image main">><img src="images/soft3.png" alt="" /></span>
+										Here is Megalovania with a honeycomb pattern and  a full octave range.
 										<span class="image main">><img src="images/soft4.png" alt="" /></span>
+										Finally here is a cut out sheet with the racks added on the sides.
 										<span class="image main">><img src="images/soft5.png" alt="" /></span>
+
+										If you want to explore more of our MIDI code, checkout the github repo <a href="https://github.com/natesampo/DropTheBeat/tree/master/writeToSVG">here</a>.
 
 
 
