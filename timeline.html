@@ -21,6 +21,7 @@
 						<div class="inner">
 
 							<!-- Header -->
+							<!-- Header -->
 								<header id="header" align="right">
 									<a href="index.html" class="logo"><strong>DroptheBeat</strong></a>
 								</header>
@@ -31,12 +32,12 @@
 										<h1>Sprints</h1>
 									</header>
 
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-
+									<h2><b>Goal:</b></h2>
+<h3><b>Create a machine that plays music using marbles, inspired by the Wintergatan marble machine</b></h3><ul>
+<li>Capable of playing any song</li>
+<li>Aesthetically pleasing and mechanically complex</li>
+<li>(and eventually) stores songs using mechanical memory</li></ul>
+</p>
 									<hr class="major" />
 
 									<h2>Sprint 1</h2>
@@ -47,8 +48,8 @@
 										<li>Construct a working prototype capable of playing songs with multiple notes</li>
 									</ul></i>
 									<p><b>In order to play nice music we need a nice instrument.</b> We decided make, not buy, an instrument in order to both reduce cost to us and as a fun challenge.  At the beginning, we weren’t sure what material would be best, so we manufactured a range of possible instruments and rated them on their cost, pitch, and timbre. </p>
+<img src="images/measure.png" alt="Our measurements."/><p>We decided on metal pipes for our notes because of their high marks in every category we tested</p>
 									<span class="sprint1instruments"><img src="images/sprint1instruments.png" alt="A photo of our instruments prototypes."/></span>
-<p>We decided on metal pipes for our notes because of their high marks in every category we tested</p>
 <img src="images/tubes.jpg" alt="A photo of our metal tubes."/><p>
 Additionally, we experimented with the actuation that causes the dropping of the marbles. For this sprint we tested using a stepper to control both when a marble drops and where the marble goes.
 </p>
@@ -128,13 +129,13 @@ The marble routing was trivial, we simply angled our bottom plate and added ramp
 <p>The next step was more difficult. We needed a good way to bring the marbles back to the top at a fast enough rate that they could keep up with a song sheet. The two likely option are either a belt (possibly magnetic) that would take marbles back up to the top and a water wheel that would keep the marbles in compartments that release them at the top. As you can see from the picture below, we ended up going with the wheel due to its high marble capacity… and it just looks so cool.
 <img src="images/belt.png" alt="A photo of a belt."/><img src="images/wheel.png" alt="A photo of our Sprint 3 wheel."/></p>
 After the wheel take the marbles back up, it deposits them into a collection tray that feed back into the reservoir to be used again.
-<p>
+<p><img src="images/tray.png" alt="A photo of our Sprint 3 Collection Tray."/>
 
 <p>
 Since the CAD was designed in an intelligent way, scaling up to an octave was trivial. But since we had to recut all parts of the device we did not have enough time to solve our third goal of variable song sheet speed. Instead we leave room extra space in the cut sheet for longer notes.
 </p><p>
 Finally, here is the final device assembled!
-</p>
+</p><img src="images/sprint3.png" alt="A photo of our Sprint 3."/><p>
 Looks impressive doesn’t it? Good, cause it doesn’t work.</p><p>
 Unfortunately after finally assembling the device at the end of sprint three, we found that it did not play beautiful melodies like we hoped for 3 big reasons:</p><ol>
 <li>We cut the ramps on the inside out of the wrong material, so we had to sand them down to get them to fit. This imprecise sanding caused variability in ramp position which led to marbles missing their notes</li>
@@ -151,8 +152,52 @@ Additionally, the mechanism to reroute marbles to the top was non-functional for
 									<hr class="major" />
 
 									<h2>Sprint 4</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<p>Being our fourth and final deliverable we needed to polish our design and come up with a working product. So our goals for the final deliverable were to
+</p><ul><li>Get consistent feeding into the song sheet.</li>
+<li>Change our marble collection funnel so it will consistently catch marbles from the wheel</li>
+<li>Turn the wheel</li>
+<li>Get the ramps to work by cutting them out of appropriately sized wood</li>
+<li>Make the base plate steeper</li>
+<li>Mount the pipes correctly</li>
+</ul>
+<p>So, this is a lot to change. Let’s see how we did on each.</p>
+
+
+<p><b>Get consistent feeding into the song sheet:</b></p>
+<p>Originally the spacers of sprint 3 caused marbles to get stuck on each other and not feed correctly. To counteract this we took out the spacer and turn the feeder in to a wide ball pit (not the fun kind) where the is a long base layer of marbles that provide plenty of opportunity for marbles to fall into the sheet. This method worked significantly better and we found no problems with loading marbles correctly.
+</p><p><b>
+Change our marble collection funnel so it will consistently catch marbles from the wheel:</b></p><p>
+After checking to see where the marbles were missing, we extended the collection tray to account for that area, catching the marbles that missed before.
+</p>
+<p>
+<b>Make the base plate steeper:</b></p><p>
+To fix the problem of the marbles not routing into the wheel, we increased the steepness of the base plates. This easily fixed the problem and produced satisfying marble routing towards the wheel.
+</p><p><b>
+Turn the wheel:</b></p><p>
+In sprint three we did not have a turning wheel due to not being able to power the stepper we had. In order to bypass this, we first explored a slightly smaller stepper motor that appeared to have plenty of torque. However, after printing a mount for the stepper and testing it with the wheel we found that although it could turn the wheel, it was not strong enough that we would have faith it would work integrated into the system.
+</p><p>We decided to instead turn the wheel with a found DC motor that gave more torque. After integrating the motor we found it spun the wheel well, in fact too well. At the speed with sufficient torque, the motor spun the large wheel a revolution per second, much too fast for our purposes. To counteract this we coded the motor to only occasionally turn the wheel and coast off of the moment generated in between runs. This worked for a time, but consistent and sudden change in speed caused the shaft to strip the inside of the 3D printed part we used to interface between the shaft and the wheel, disabling the wheel.
+</p><p><b>
+Mount the pipes correctly:</b></p><p>
+With the severe problems of decreased resonation due to improper pipe spacing, we were careful in this sprint to drill holes into pipes so that they would have maximum resonance. After drilling the holes, measuring hole distance from the bottom of the pipe, and inputting the data into the mount to have properly spaced holes, we were able to have mounted pipes that resonated well.
+</p><p>However, we improperly accounted for the change in baseplate angle, causing the baseplate to interfere with the bottom set of pipes. Since the base plate and sides were already cut and we did not have enough wood or time recut all the pieces, we remounted the pipes higher. Unfortunately, this threw off the math associated with the ramps, causing marbles to hit the base plate too early, reducing the reliability of half our notes.
+</p><p><b>
+Cutting ramps out of appropriately sized wood:</b></p><p>
+Last time we cut the ramps out of too thick wood (¼ inch) and sanded them down to get them to fit in the ramp holders. This caused small differences in the heights of the ramps that pushed marbles from their correct path and caused them to either miss or play the wrong note.
+</p><p>
+To counteract this we cut the ramps out of thinner wood (⅛ inch) in this sprint and adjusted the holders accordingly. With this method the marbles did not jump to the wrong ramp; however, the ramps were too thin and the marbles got stuck in between the sides.
+</p><p>
+So, we went back to the ¼ inch ramps but this time adjusted the ramp holders so we would not have to sand them down and cause inequalities in ramp height. After cutting and testing these ramps we found we had the same problem as before just to a lesser extent. The space between the ramps was not large enough to reliably keep the marbles in line.
+</p><p>
+Like the Goldilocks of Engineering, we experimented with our too big and too small ramps and decided on a ramp thickness of 3/16ths as a happy medium. Unlike the Goldilocks of Engineering, we found our medium to be not too happy.
+</p><p>
+Despite using the same wood thickness in sprint 2 and having no problems, we still found that marbles occasionally skipped ramps or did not hit. This is likely due to the increased size of our project compared to sprint 2 causing structural problems with the ramp holders and consequently allowing slight bumps to mess up the alignment. However, a large amount of notes missing is due to the the improperly aligned bottom pipes.
+</p><p><b>
+
+Conclusion:</b></p><p>
+As you can probably guess from our problems with wheel turning and marble routing, the final device was not in working shape. It could successfully feed a song in, but the pipe issues made the song hard to recognize, additionally the wheel was unable to bring the marbles back to the top.
+</p><p>
+Despite the problems with the final project, the whole process was good learning experience. We all got experience iterating on an integrated, mechanically complex machine and collaborating as a team to deliver a final product.
+</p><img src="images/sprint4.png" alt="A photo of our Sprint 4"/><img src="images/sprint41.png" alt="A photo of our Sprint 4 interior."/>
 
 								</section>
 
@@ -204,7 +249,6 @@ Additionally, the mechanism to reroute marbles to the top was non-functional for
 										<li><a href="#">Amet Lacinia</a></li>
 									</ul>
 								</nav>
-
 							<!-- Footer -->
 								<footer id="footer">
 									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
