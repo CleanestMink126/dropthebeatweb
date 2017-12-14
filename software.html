@@ -28,34 +28,52 @@
 
 							<!-- Content -->
 								<section>
-									<h2><b>Goal:</b></h2>
-<h3><b>Create a machine that plays music using marbles, inspired by the Wintergatan marble machine</b></h3><ul>
-<li>Capable of playing any song</li>
-<li>Aesthetically pleasing and mechanically complex</li>
-<li>(and eventually) stores songs using mechanical memory</li></ul>
-</p>
+
 									<hr class="major" />
+									<p>
 
-									<h2>Sprint 1</h2>
-									<h3>Target Deliverables</h3>
-									<i><ul>
-										<li>Find a viable musical instrument</li>
-										<li>Find a viable marble dropping mechanism</li>
-										<li>Construct a working prototype capable of playing songs with multiple notes</li>
-									</ul></i>
-									<p><b>In order to play nice music we need a nice instrument.</b> We decided make, not buy, an instrument in order to both reduce cost to us and as a fun challenge.  At the beginning, we weren’t sure what material would be best, so we manufactured a range of possible instruments and rated them on their cost, pitch, and timbre. </p>
-<img src="images/measure.png" alt="Our measurements."/><p>We decided on metal pipes for our notes because of their high marks in every category we tested</p>
-									<span class="sprint1instruments"><img src="images/sprint1instruments.png" alt="A photo of our instruments prototypes."/></span>
-<img src="images/tubes.jpg" alt="A photo of our metal tubes."/><p>
-Additionally, we experimented with the actuation that causes the dropping of the marbles. For this sprint we tested using a stepper to control both when a marble drops and where the marble goes.
-</p>
-<img src="images/dropper.jpg" alt="A photo of our dropper."/>
+										Software:
+										Repo:
+										https://github.com/natesampo/DropTheBeat
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qOTImKK5Mck" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+										MIDI to Cut File:
+										In order to store the songs in mechanical memory, specifically a song sheet that marbles can drop into, we need a program that can automatically turn a MIDI file into a song sheet of appropriate proportions that can fed into the machine. Without a good program, we would be stuck manually adding holes to a song sheet for hours, most likely with a high degree of human error.
+										So, using the python libraries <a href="https://mido.readthedocs.io/en/latest/">MIDO</a> and <a href="https://pythonhosted.org/svgwrite/">svgwrite</a>, we designed a program to go through a desired midi file and generate an SVG file with hole placement corresponding to the notes of the song.
 
-<p>
-As you can see our device is not much yet, with only 2 notes and a slow servo motor, but we accomplished our sprint goals of exploring the materials for making notes and testing out some actuation.
-</p>
+										Honey Comb:
+										Initially, the logical way to encode notes into the sheet is to have one hole slot per note. Every time a note gets played in the song, a corresponding hole is put in the cutsheet. This is helpful, but suppose we want to play a song on a full octave, 13 notes, and we want to play a minute, feasibly 100 notes. That makes the length of the song sheet over 10 times the width and with ¼ inch marbles 25 inches long (not including any margins we would want on the sheet). That is already longer than a full sheet that would fit onto a laser cutter bed. So we have too much length on the song sheet to a small amount of width.
+										To resolve this problem we cut holes in a honeycomb pattern as shown below. With this design we have two holes per note which works better with the thickness of our pipes. This doubles the width of the sheet while cutting the length in half.
+										<br>
+										<img src="images/soft1.png" alt="" width = "400"/>
+										<span class="image main" width = "400"><img src="images/soft2.png" alt=""/></span>
+
+										Considerations:
+										This program needs to integrate flawlessly with a mechanical system with parameters stored elsewhere, so we needed to account for:
+										Hole Size
+										Space Between Holes
+										Line Thickness
+										Horizontal Border Space
+										Vertical Border Space
+										Length of Notes
+										Note Range
+										Number of Notes to Include
+										Placement of Notes
+
+										Here is an excerpt from Ode to Joy without a honeycomb pattern and a 5 note range and Megalovania with a honeycomb pattern and  a full octave range. If you want to explore more of our MIDI code, checkout the github repo <a href="https://github.com/natesampo/DropTheBeat/tree/master/writeToSVG">here</a>.
+
+										<span class="image main">><img src="images/soft3.png" alt="" /></span>
+										<span class="image main">><img src="images/soft4.png" alt="" /></span>
+										<span class="image main">><img src="images/soft5.png" alt="" /></span>
+
+
+
+										Stepper Code:
+										The control for the stepper and DC motors was trivial. We used a transistor along with analog output from the arduino to control the DC motor. For the stepper we imported a stepper library
+										 found <a href="http://www.airspayce.com/mikem/arduino/AccelStepper/">here</a> to send input to the motor drivers to modulate speed. The code we used can be found <a href="https://github.com/natesampo/DropTheBeat/tree/master/stepperDRV">here</a>.
+
+
+									<br>
+								</p>
 
 									<hr class="major" />
 
@@ -68,12 +86,6 @@ As you can see our device is not much yet, with only 2 notes and a slow servo mo
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
 
 								<!-- Menu -->
 									<nav id="menu">
@@ -104,11 +116,6 @@ As you can see our device is not much yet, with only 2 notes and a slow servo mo
 											<li><a href="budget.html">Budget</a></li>
 										</ul>
 									</nav>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
 
 						</div>
 					</div>

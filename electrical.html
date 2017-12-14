@@ -28,34 +28,53 @@
 
 							<!-- Content -->
 								<section>
-									<h2><b>Goal:</b></h2>
-<h3><b>Create a machine that plays music using marbles, inspired by the Wintergatan marble machine</b></h3><ul>
-<li>Capable of playing any song</li>
-<li>Aesthetically pleasing and mechanically complex</li>
-<li>(and eventually) stores songs using mechanical memory</li></ul>
-</p>
+
 									<hr class="major" />
+									<p>
 
-									<h2>Sprint 1</h2>
-									<h3>Target Deliverables</h3>
-									<i><ul>
-										<li>Find a viable musical instrument</li>
-										<li>Find a viable marble dropping mechanism</li>
-										<li>Construct a working prototype capable of playing songs with multiple notes</li>
-									</ul></i>
-									<p><b>In order to play nice music we need a nice instrument.</b> We decided make, not buy, an instrument in order to both reduce cost to us and as a fun challenge.  At the beginning, we weren’t sure what material would be best, so we manufactured a range of possible instruments and rated them on their cost, pitch, and timbre. </p>
-<img src="images/measure.png" alt="Our measurements."/><p>We decided on metal pipes for our notes because of their high marks in every category we tested</p>
-									<span class="sprint1instruments"><img src="images/sprint1instruments.png" alt="A photo of our instruments prototypes."/></span>
-<img src="images/tubes.jpg" alt="A photo of our metal tubes."/><p>
-Additionally, we experimented with the actuation that causes the dropping of the marbles. For this sprint we tested using a stepper to control both when a marble drops and where the marble goes.
-</p>
-<img src="images/dropper.jpg" alt="A photo of our dropper."/>
+									Mechanical:
+									Embedded CAD
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qOTImKK5Mck" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+									Memory Reading
+									Each song played by the machine is stored in a sheet of mechanical memory, with notes represented by holes. The song sheet is propelled through the machine using a rack and pinion system cut into its side. Two acrylic gears are driven by stepper motors to enable precise control of the feed rate and four additional free-spinning wheels keep the sheet aligned.
+									<br>
 
-<p>
-As you can see our device is not much yet, with only 2 notes and a slow servo motor, but we accomplished our sprint goals of exploring the materials for making notes and testing out some actuation.
-</p>
+									<span class="image main"><img src="images/mech1.jpg" alt="" /></span>
+									Marbles are stored in a reservoir above the song sheet and drop into the holes as the sheet slides past. The marbles are carried along until they reach a fixed set of holes underneath the sheet, at which point they drop through into the next part of the machine.
+									<br>
+
+									<span class="image main"><img src="images/mech2.PNG" alt="" /></span>
+									<br>
+
+									Playing Notes
+									The machine produces sound by launching marbles at steel pipes. The pipes have each been tuned to a different note by cutting them to a specific length. They are arranged in two rows with the front row raised slightly higher than the back row. The pipes are also mounted to sliding panels for easy removal and adjustment.
+									<br>
+
+									<span class="image main"><img src="images/mech3.png" alt="" /></span>
+									<br>
+
+									Marbles are launched into the pipes by a set of curved ramps running down from the feeding mechanism. A pattern of shorter and longer ramps allows marbles to be directed at the two different rows of tubes without the need for additional routing. The ramp geometry was initially estimated using simple physics calculations, and then adjusted experimentally to correct for the effects of friction.
+									<br>
+
+									<span class="image main"><img src="images/mech4.jpg" alt="" /></span>
+									<br>
+
+									Marble Recycling
+									After hitting the pipes, marbles need to be transported back up to the marble reservoir to be used again. A set of ramps at the base of the machine collect the marbles and direct them towards the lifting mechanism.
+									<br>
+									<iframe width="840" height="475" src="https://www.youtube.com/embed/LFbcxKK3VDU" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+									<br>
+									Marbles are raised back to the top of the machine by a large wheel divided into twelve compartments. The inner edge of each compartment is angled, so marbles will roll out when they reach the highest point of the wheel’s arc. The wheel is driven by a DC motor and supported on the other side by a bearing to eliminate friction.
+									<br>
+									<span class="image main"><img src="images/mech5.jpg" alt="" /></span>
+									<br>
+
+									As marbles roll out of the wheel, they are caught by a ramp at the top and routed back into the marble reservoir to begin the cycle again.
+									<br>
+
+									<span class="image main"><img src="images/mech6.jpg" alt="" /></span>
+									<br>
+								</p>
 
 									<hr class="major" />
 
@@ -68,12 +87,6 @@ As you can see our device is not much yet, with only 2 notes and a slow servo mo
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
 
 								<!-- Menu -->
 									<nav id="menu">
@@ -104,11 +117,6 @@ As you can see our device is not much yet, with only 2 notes and a slow servo mo
 											<li><a href="budget.html">Budget</a></li>
 										</ul>
 									</nav>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
 
 						</div>
 					</div>
