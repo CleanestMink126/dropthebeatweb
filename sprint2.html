@@ -28,46 +28,37 @@
 
 							<!-- Content -->
 								<section>
+<h1>Sprint 2</h1>
+<h2>Sprint Goals</h2>
+<ul>
+	<li>Stores songs using mechanical memory</li>
+	<li>Feed marbles into mechanical memory</li>
+	<li>Plays several tuned notes</li>
+</ul>
 
-
-									<h2><b>Goal:</b></h2>
-<h3><b>Create a machine that plays music using marbles, inspired by the Wintergatan marble machine</b></h3><ul>
-<li>Capable of playing any song</li>
-<li>Aesthetically pleasing and mechanically complex</li>
-<li>stores songs using mechanical memory</li></ul>
-</p>
-<hr class="major" />
-<h2>Sprint 2</h2>
-									<p>
+<p>
 After getting a good feel for our system in Sprint 1 we decided to pivot on a major design aspect of our machine, namely its actuation. As you can see in Sprint 1 we routed marbles with a servo that could open a gate and let a marble through. This is effective for example tune playing; however there are several limitations: many servos are required for a large range of notes, servos are severely limited in speed and therefore lack the temporal precision needed to play a song, and all the notes would have to be controlled by a computer rather than a microcontroller if you wanted to play multiple songs.
-So we decided to pivot.
+So we decided to pivot. If the notes of the song were stored physically rather than in a computer, we could make our machine faster, more mechanically interesting, and more aesthetically pleasing.
 </p><p>
-We decided that if the notes of the song were stored physically rather than in a computer, we could create a device that can play faster songs, be mechanically cooler, and more aesthetically pleasing.
-</p><h3>
-So for Sprint  2 we wanted to manufacture a prototype that:</h3><ul><i>
-<li>Stores songs using mechanical memory</li>
-<li>Feed marbles into mechanical memory</li>
-<li>Plays several tuned notes</li>
-</i></ul><p>
-Without any adieu, here it is in all it’s glory!<p>
+Below, you can see our Sprint 2 prototype.<p>
 <img src="images/sprint2.png" alt="A photo of our Sprint 2."/></p>
 <p>
-You’re probably wondering how it plays music. Well if you will refer to the images below, we’ll tell you.</p>
+You’re probably wondering how it plays music. Well if you will refer to the images below, we’ll show you.</p>
 <ol>
-<li>Song Sheet: We designed a Python program to get a music MIDI files and convert it into a SVG that we can cut out to mechanically represent the song, as shown below.</li>
+<b><li>Song Sheet:</b> We designed a Python program to get a music MIDI files and convert it into a SVG that we can cut out to mechanically represent the song, as shown below.</li>
 <img src="images/songsheet1.jpg" alt="A photo of our Song Sheet." align="center" width = "300"/>
 <img src="images/songsheet2.png" alt="A photo of our digital song sheet." align="center"/>
 <img src="images/sprint22.png" alt="A photo of our Sprint 2." align = "center"/>
-<li>Marble Reservoir: Marbles are contained in the reservoir so that as the song sheet passes under it, they fall into the holes of the sheet.
-</li><li>Free spinning wheels: The wheels will along the song sheet to slide into the slot under the reservoir
-</li><li>Stepper Motor: The stepper motor will drive the song sheet so that it can be consistently fed into the slot. We went through a large amount of trial and error to get it to spin reliably, changing from using an Arduino Motor Shield, to an H Bridge Motor Driver, to an actual stepper motor driver.
+<li><b>Marble Reservoir:</b> Marbles are contained in the reservoir so that as the song sheet passes under it, they fall into the holes of the sheet.
+</li><li><b>Free-Spinning Wheels:</b> The wheels grip the side of the song sheet to slide it through the slot under the reservoir.
+</li><li><b>Stepper Motor:</b> The stepper motor will drive the song sheet so that it can be consistently fed into the slot. We went through a large amount of trial and error to get it to spin reliably, changing from using an Arduino Motor Shield, to an H Bridge Motor Driver, to an actual stepper motor driver.
 </li>
 <img src="images/control.png" alt="A photo of our Sprint 2." align = "center"/>
 <li>
-Marble Drop Holes: After the sheet passes the reservoir, it passes over the drop holes, where marbles in the sheet will fall towards ramps below.
-</li><li>Marble Ramps: Marbles will enter ramps corresponding to each note, which will lead the marble the right spot on the right pipe.
-</li><li>Tuned Pipe: The marbles will bounce off the pipe producing a melody.
-</li><li>Marble Collection Tray: After ricocheting off of the pipes, marbles are collected and  routed towards the collection tray where they can be accessed for later use.
+<b>Marble Drop Holes:</b> After the sheet passes the reservoir, it passes over the drop holes, where marbles in the sheet will fall towards ramps below.
+</li><li><b>Marble Ramps:</b> Marbles will enter ramps corresponding to each note, which will direct the marble to the correct pipe.
+</li><li><b>Tuned Pipe:</b> The marbles will bounce off the pipe producing a note.
+</li><li><b>Marble Collection Tray:</b> After ricocheting off of the pipes, marbles are collected and routed towards the collection tray where they can be accessed for later use.
 </li>
 <img src="images/sprint23.png" alt="A photo of our Sprint 2." align = "center"/>
 </ol>
