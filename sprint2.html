@@ -1,16 +1,16 @@
 ﻿<!DOCTYPE HTML>
 
 <html>
-	<head>
-		<title>Sprints</title>
-		<meta charset="utf-8" />
-		<link rel="icon" href="marble.jpg">
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="template_assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
+<head>
+	<title>DroptheBeat</title>
+	<meta charset="utf-8" />
+	<link rel="icon" href="marble.jpg">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="template_assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+</head>
 	<body>
 
 		<!-- Wrapper -->
@@ -55,24 +55,26 @@ Without any adieu, here it is in all it’s glory!<p>
 You’re probably wondering how it plays music. Well if you will refer to the images below, we’ll tell you.</p>
 <ol>
 <li>Song Sheet: We designed a Python program to get a music MIDI files and convert it into a SVG that we can cut out to mechanically represent the song, as shown below.</li>
-<img src="images/songsheet1.jpg" alt="A photo of our Song Sheet."/>
-<img src="images/songsheet2.png" alt="A photo of our digital song sheet."/>
-<img src="images/sprint22.png" alt="A photo of our Sprint 2."/>
+<img src="images/songsheet1.jpg" alt="A photo of our Song Sheet." align="center" width = "300"/>
+<img src="images/songsheet2.png" alt="A photo of our digital song sheet." align="center"/>
+<img src="images/sprint22.png" alt="A photo of our Sprint 2." align = "center"/>
 <li>Marble Reservoir: Marbles are contained in the reservoir so that as the song sheet passes under it, they fall into the holes of the sheet.
 </li><li>Free spinning wheels: The wheels will along the song sheet to slide into the slot under the reservoir
 </li><li>Stepper Motor: The stepper motor will drive the song sheet so that it can be consistently fed into the slot. We went through a large amount of trial and error to get it to spin reliably, changing from using an Arduino Motor Shield, to an H Bridge Motor Driver, to an actual stepper motor driver.
-<img src="images/control.png" alt="A photo of our Sprint 2."/>
-</li><li>
+</li>
+<img src="images/control.png" alt="A photo of our Sprint 2." align = "center"/>
+<li>
 Marble Drop Holes: After the sheet passes the reservoir, it passes over the drop holes, where marbles in the sheet will fall towards ramps below.
 </li><li>Marble Ramps: Marbles will enter ramps corresponding to each note, which will lead the marble the right spot on the right pipe.
 </li><li>Tuned Pipe: The marbles will bounce off the pipe producing a melody.
 </li><li>Marble Collection Tray: After ricocheting off of the pipes, marbles are collected and  routed towards the collection tray where they can be accessed for later use.
-<img src="images/sprint23.png" alt="A photo of our Sprint 2."/></li>
+</li>
+<img src="images/sprint23.png" alt="A photo of our Sprint 2." align = "center"/>
 </ol>
 <p>
 Well, this was the intention of each mechanism. As in life, things do not always turn out the way you expect.  <a href="https://www.youtube.com/watch?v=rFCDxCn7umE">Here’s Ode to Joy</a>:
 </p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rFCDxCn7umE?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+<iframe width="840" height="475" src="https://www.youtube.com/embed/rFCDxCn7umE?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 <br><br><p>As you might notice from the video, our stepper motor is not where it is supposed to be. Also, there is string connected to a screw in our song sheet. As we discovered after fabrication, wheels, especially the one driven by the stepper motor, do not get enough grip on the song sheet to reliably move it. As a quick fix, we attached a string to the sheet and to the stepper to feed it through.
 </p>
 
