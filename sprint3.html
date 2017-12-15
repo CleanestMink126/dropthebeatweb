@@ -1,0 +1,140 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Sprints</title>
+		<meta charset="utf-8" />
+		<link rel="icon" href="marble.jpg">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="template_assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+							<!-- Header -->
+								<header id="header" align="right">
+									<a href="index.html" class="logo"><strong>DroptheBeat</strong></a>
+								</header>
+
+							<!-- Content -->
+								<section>
+
+									<h2><b>Goal:</b></h2>
+									<h3><b>Create a machine that plays music using marbles, inspired by the Wintergatan marble machine</b></h3><ul>
+									<li>Capable of playing any song</li>
+									<li>Aesthetically pleasing and mechanically complex</li>
+									<li>stores songs using mechanical memory</li></ul>
+									</p>
+									<hr class="major" />
+
+									<h2>Sprint 3</h2>
+									<p>Addressing the issues from the last sprint:</p><p>
+Our top priority for this sprint was fixing the wheel grip issue from the last sprint. If we do not have a song sheet feeding in on its own, we do not have a product.
+</p><h3>
+Beyond that, we wanted to Manufacture a prototype that:</h3>
+<ul><i>
+<li>Recycles marbles after they hit pipes</li>
+<li>Can play variable note durations</li>
+<li>Can play an entire octave of notes</li>
+</i></ul>
+<p>Fixing Grip Issues:</p>
+<p>After experimenting with wheels and strings as methods of driving the sheet, we decide that neither are sufficient for our purposes, with wheel not getting a good grip and the string being too jerky and hard to control. Consequently, in sprint 3 we switched to a rack and pinion system to control the sheet, as shown below.</p>
+<img src="images/acrylic.png" alt="A photo of our rack and pinion."/>
+<p>
+This enables us to both get a better grip on the sheet as well as control it with more spatial precision.
+</p>
+<p>
+Recycling Marbles:</p>
+<p>Next, we focussed on our next goal of recycling marbles so the machine can keep playing without having to be reloaded. Thi requires both marbles to be routed to an appropriate spot after hitting pipes, for marbles to be brought back to the top and subsequently be loaded into the reservoir.
+</p><p>
+The marble routing was trivial, we simply angled our bottom plate and added ramp so all the marbles would collect in a bottom corner of the machine.</p>
+<img src="images/corner.png" alt="A photo of our Sprint 3 Corner."/>
+<p>The next step was more difficult. We needed a good way to bring the marbles back to the top at a fast enough rate that they could keep up with a song sheet. The two likely option are either a belt (possibly magnetic) that would take marbles back up to the top and a water wheel that would keep the marbles in compartments that release them at the top. As you can see from the picture below, we ended up going with the wheel due to its high marble capacity… and it just looks so cool.
+<img src="images/belt.png" alt="A photo of a belt."/><img src="images/wheel.png" alt="A photo of our Sprint 3 wheel."/></p>
+After the wheel take the marbles back up, it deposits them into a collection tray that feed back into the reservoir to be used again.
+<p><img src="images/tray.png" alt="A photo of our Sprint 3 Collection Tray."/>
+
+<p>
+Since the CAD was designed in an intelligent way, scaling up to an octave was trivial. But since we had to recut all parts of the device we did not have enough time to solve our third goal of variable song sheet speed. Instead we leave room extra space in the cut sheet for longer notes.
+</p><p>
+Finally, here is the final device assembled!
+</p><img src="images/sprint3.png" alt="A photo of our Sprint 3."/><p>
+Looks impressive doesn’t it? Good, cause it doesn’t work.</p><p>
+Unfortunately after finally assembling the device at the end of sprint three, we found that it did not play beautiful melodies like we hoped for 3 big reasons:</p><ol>
+<li>We cut the ramps on the inside out of the wrong material, so we had to sand them down to get them to fit. This imprecise sanding caused variability in ramp position which led to marbles missing their notes</li>
+<li>Since we were so busy with fabrication and  assembly we took a shortcut in mounting the pipes, holding them all at the same points rather than at ¼ and ¾ points along the pipe (the points that cause the best resonation). This caused some pipes to resonate very poorly and therefore be almost inaudible in the song. </li>
+<li>Due to size and position of some of the dividers in the marble reservoir, marbles would get caught on each other. This caused marbles to not fall into some holes on the sheet and therefore not be represented in the song. </li>
+</ol><p>
+Additionally, the mechanism to reroute marbles to the top was non-functional for 3 reasons:</p><ol>
+<li>The collection ramps at the bottom of the machine were too shallow so marbles would not roll down correctly</li>
+<li>We could not get the wheel to turn with the stepper motor we had, due to it requiring more current and voltage than we could supply</li>
+<li>The marbles fell out of our wheel at the wrong time and would not get caught to get rerouted into the feeding mechanism.</li>
+</ol>
+</p>
+
+									<hr class="major" />
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+
+
+								<!-- Menu -->
+									<nav id="menu">
+										<header class="major">
+											<h2>Menu</h2>
+										</header>
+										<ul>
+											<li><a href="homepage.html">Homepage</a></li>
+											<li>
+												<span class="opener">Design</span>
+												<ul>
+													<li><a href="mechanical.html">Mechanical</a></li>
+													<li><a href="electrical.html">Electrical</a></li>
+													<li><a href="software.html">Software</a></li>
+												</ul>
+											</li>
+											<li>
+												<span class="opener">Timeline</span>
+												<ul>
+													<li><a href="sprint1.html">Sprint 1</a></li>
+													<li><a href="sprint2.html">Sprint 2</a></li>
+													<li><a href="sprint3.html">Sprint 3</a></li>
+													<li><a href="sprint4.html">Final Sprint</a></li>
+												</ul>
+											</li>
+											<li><a href="team.html">Team</a></li>
+											<li><a href="budget.html">Budget</a></li>
+										</ul>
+									</nav>
+
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="template_assets/js/jquery.min.js"></script>
+			<script src="template_assets/js/skel.min.js"></script>
+			<script src="template_assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="template_assets/js/main.js"></script>
+
+	</body>
+</html>

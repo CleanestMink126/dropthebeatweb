@@ -1,0 +1,158 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Sprints</title>
+		<meta charset="utf-8" />
+		<link rel="icon" href="marble.jpg">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="template_assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+							<!-- Header -->
+								<header id="header" align="right">
+									<a href="index.html" class="logo"><strong>DroptheBeat</strong></a>
+								</header>
+
+							<!-- Content -->
+								<section>
+
+									<header class="main">
+										<h1>Software Design</h1>
+									</header>
+
+									<hr class="major" />
+									<p>
+										<header>
+											<h2>MIDI to Cut File:</h2>
+										</header>
+
+										In order to store the songs in mechanical memory, specifically a song sheet that marbles can drop into, we need a program that can automatically turn a MIDI file into a song sheet of appropriate proportions that can fed into the machine. Without a good program, we would be stuck manually adding holes to a song sheet for hours, most likely with a high degree of human error.
+										So, using the python libraries <a href="https://mido.readthedocs.io/en/latest/">MIDO</a> and <a href="https://pythonhosted.org/svgwrite/">svgwrite</a>, we designed a program to go through a desired midi file and generate an SVG file with hole placement corresponding to the notes of the song.
+
+
+										<header>
+											<h2>Honey Comb:</h2>
+										</header>
+										<br>
+										<img src="images/soft2.png" alt="" height = "500" align = "right"/>
+										<img src="images/soft1.png" alt="" width = "450" align = "right"/>
+
+										Initially, the logical way to encode notes into the sheet is to have one hole slot per note. Every time a note gets played in the song, a corresponding hole is put in the cutsheet. This is helpful, but suppose we want to play a song on a full octave, 13 notes, and we want to play a minute, feasibly 100 notes. That makes the length of the song sheet over 10 times the width and with ¼ inch marbles 25 inches long (not including any margins we would want on the sheet). That is already longer than a full sheet that would fit onto a laser cutter bed. So we have too much length on the song sheet to a small amount of width.
+										To resolve this problem we cut holes in a honeycomb pattern as shown below. With this design we have two holes per note which works better with the thickness of our pipes.
+										This doubles the width of the sheet while cutting the length in half. The two images below show the differing proportions of the two options over the same tune, with the left generated in a normal structure
+										 and the right generated in a honeycomb pattern.
+										<br>
+
+										<header>
+											<h2>Considerations:</h2>
+										</header>
+										<br>
+
+										This program needs to integrate flawlessly with a mechanical system with parameters stored elsewhere, so we needed to account for:
+										<li>Hole Size</li>
+										<li>Space Between Holes</li>
+										<li>Line Thickness</li>
+										<li>Horizontal Border Space</li>
+										<li>Vertical Border Space</li>
+										<li>Length of Notes</li>
+										<li>Note Range</li>
+										<li>Number of Notes to Include</li>
+										<li>Placement of Notes</li>
+										<br>
+										If you want to explore more of our documented MIDI code and see how we account for all of these variables, checkout the github repo <a href="https://github.com/natesampo/DropTheBeat/tree/master/writeToSVG">here</a>.
+										<br>
+
+										<header>
+											<h3>Here is an excerpt from  Megalovania with a honeycomb pattern and  a full octave range, Ode to Joy without a honeycomb pattern and a 5 note range, and  cut out sheet with the racks added on the sides.</h3>
+										</header>
+										<br>
+
+										<img src="images/soft4.png" alt="" height = "300" align= "top" />
+										<!-- <span class="image main"><img src="images/soft4.png" alt="" /></span> -->
+
+										<img src="images/soft3.png" alt="" height = "300" align= "top" />
+										<!-- <span class="image main"><img src="images/soft3.png" alt="" /></span> -->
+
+										<img src="images/soft5.png" alt="" height = "300" align= "top" />
+										<!-- <span class="image main"><img src="images/soft5.png" alt="" /></span> -->
+										<br>
+
+
+										<header>
+											<h2>Stepper Code:</h2>
+										</header>
+										The control for the stepper and DC motors was trivial. We used a transistor along with analog output from the arduino to control the DC motor. For the stepper we imported a stepper library
+										 found <a href="http://www.airspayce.com/mikem/arduino/AccelStepper/">here</a> to send input to the motor drivers to modulate speed. The code we used can be found <a href="https://github.com/natesampo/DropTheBeat/tree/master/stepperDRV">here</a>.
+
+
+									<br>
+								</p>
+
+									<hr class="major" />
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+
+								<!-- Menu -->
+									<nav id="menu">
+										<header class="major">
+											<h2>Menu</h2>
+										</header>
+										<ul>
+											<li><a href="homepage.html">Homepage</a></li>
+											<li>
+												<span class="opener">Design</span>
+												<ul>
+													<li><a href="mechanical.html">Mechanical</a></li>
+													<li><a href="electrical.html">Electrical</a></li>
+													<li><a href="software.html">Software</a></li>
+												</ul>
+											</li>
+											<li>
+												<span class="opener">Timeline</span>
+												<ul>
+													<li><a href="sprint1.html">Sprint 1</a></li>
+													<li><a href="sprint2.html">Sprint 2</a></li>
+													<li><a href="sprint3.html">Sprint 3</a></li>
+													<li><a href="sprint4.html">Final Sprint</a></li>
+												</ul>
+											</li>
+											<li><a href="team.html">Team</a></li>
+											<li><a href="budget.html">Budget</a></li>
+										</ul>
+									</nav>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="template_assets/js/jquery.min.js"></script>
+			<script src="template_assets/js/skel.min.js"></script>
+			<script src="template_assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="template_assets/js/main.js"></script>
+
+	</body>
+</html>

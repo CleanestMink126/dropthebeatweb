@@ -1,0 +1,141 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Sprints</title>
+		<meta charset="utf-8" />
+		<link rel="icon" href="marble.jpg">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="template_assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+							<!-- Header -->
+								<header id="header" align="right">
+									<a href="index.html" class="logo"><strong>DroptheBeat</strong></a>
+								</header>
+
+							<!-- Content -->
+								<section>
+
+									<h2><b>Goal:</b></h2>
+									<h3><b>Create a machine that plays music using marbles, inspired by the Wintergatan marble machine</b></h3><ul>
+									<li>Capable of playing any song</li>
+									<li>Aesthetically pleasing and mechanically complex</li>
+									<li>stores songs using mechanical memory</li></ul>
+									</p>
+									<hr class="major" />
+
+									<h2>Sprint 4</h2>
+									<p>Being our fourth and final deliverable we needed to polish our design and come up with a working product.</p>
+									<h3>Our goals for the final deliverable were to:</h3>
+</p><ul><i><li>Get consistent feeding into the song sheet.</li>
+<li>Change our marble collection funnel so it will consistently catch marbles from the wheel</li>
+<li>Turn the wheel</li>
+<li>Get the ramps to work by cutting them out of appropriately sized wood</li>
+<li>Make the base plate steeper</li>
+<li>Mount the pipes correctly</li>
+</i></ul>
+<p>So, this is a lot to change. Let’s see how we did on each.</p>
+
+
+<p><b>Get consistent feeding into the song sheet:</b></p>
+<p>Originally the spacers of sprint 3 caused marbles to get stuck on each other and not feed correctly. To counteract this we took out the spacer and turn the feeder in to a wide ball pit (not the fun kind) where the is a long base layer of marbles that provide plenty of opportunity for marbles to fall into the sheet. This method worked significantly better and we found no problems with loading marbles correctly.
+</p><p><b>
+Change our marble collection funnel so it will consistently catch marbles from the wheel:</b></p><p>
+After checking to see where the marbles were missing, we extended the collection tray to account for that area, catching the marbles that missed before.
+</p>
+<p>
+<b>Make the base plate steeper:</b></p><p>
+To fix the problem of the marbles not routing into the wheel, we increased the steepness of the base plates. This easily fixed the problem and produced satisfying marble routing towards the wheel.
+</p><p><b>
+Turn the wheel:</b></p><p>
+In sprint three we did not have a turning wheel due to not being able to power the stepper we had. In order to bypass this, we first explored a slightly smaller stepper motor that appeared to have plenty of torque. However, after printing a mount for the stepper and testing it with the wheel we found that although it could turn the wheel, it was not strong enough that we would have faith it would work integrated into the system.
+</p><p>We decided to instead turn the wheel with a found DC motor that gave more torque. After integrating the motor we found it spun the wheel well, in fact too well. At the speed with sufficient torque, the motor spun the large wheel a revolution per second, much too fast for our purposes. To counteract this we coded the motor to only occasionally turn the wheel and coast off of the moment generated in between runs. This worked for a time, but consistent and sudden change in speed caused the shaft to strip the inside of the 3D printed part we used to interface between the shaft and the wheel, disabling the wheel.
+</p><p><b>
+Mount the pipes correctly:</b></p><p>
+With the severe problems of decreased resonation due to improper pipe spacing, we were careful in this sprint to drill holes into pipes so that they would have maximum resonance. After drilling the holes, measuring hole distance from the bottom of the pipe, and inputting the data into the mount to have properly spaced holes, we were able to have mounted pipes that resonated well.
+</p><p>However, we improperly accounted for the change in baseplate angle, causing the baseplate to interfere with the bottom set of pipes. Since the base plate and sides were already cut and we did not have enough wood or time recut all the pieces, we remounted the pipes higher. Unfortunately, this threw off the math associated with the ramps, causing marbles to hit the base plate too early, reducing the reliability of half our notes.
+</p><p><b>
+Cutting ramps out of appropriately sized wood:</b></p><p>
+Last time we cut the ramps out of too thick wood (¼ inch) and sanded them down to get them to fit in the ramp holders. This caused small differences in the heights of the ramps that pushed marbles from their correct path and caused them to either miss or play the wrong note.
+</p><p>
+To counteract this we cut the ramps out of thinner wood (⅛ inch) in this sprint and adjusted the holders accordingly. With this method the marbles did not jump to the wrong ramp; however, the ramps were too thin and the marbles got stuck in between the sides.
+</p><p>
+So, we went back to the ¼ inch ramps but this time adjusted the ramp holders so we would not have to sand them down and cause inequalities in ramp height. After cutting and testing these ramps we found we had the same problem as before just to a lesser extent. The space between the ramps was not large enough to reliably keep the marbles in line.
+</p><p>
+Like the Goldilocks of Engineering, we experimented with our too big and too small ramps and decided on a ramp thickness of 3/16ths as a happy medium. Unlike the Goldilocks of Engineering, we found our medium to be not too happy.
+</p><p>
+Despite using the same wood thickness in sprint 2 and having no problems, we still found that marbles occasionally skipped ramps or did not hit. This is likely due to the increased size of our project compared to sprint 2 causing structural problems with the ramp holders and consequently allowing slight bumps to mess up the alignment. However, a large amount of notes missing is due to the the improperly aligned bottom pipes.
+</p><p><b>
+
+Conclusion:</b></p><p>
+As you can probably guess from our problems with wheel turning and marble routing, the final device was not in working shape. It could successfully feed a song in, but the pipe issues made the song hard to recognize, additionally the wheel was unable to bring the marbles back to the top.
+</p><p>
+Despite the problems with the final project, the whole process was good learning experience. We all got experience iterating on an integrated, mechanically complex machine and collaborating as a team to deliver a final product.
+</p><img src="images/sprint4.png" alt="A photo of our Sprint 4"/><img src="images/sprint41.png" alt="A photo of our Sprint 4 interior."/>
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+
+								<!-- Menu -->
+									<nav id="menu">
+										<header class="major">
+											<h2>Menu</h2>
+										</header>
+										<ul>
+											<li><a href="homepage.html">Homepage</a></li>
+											<li>
+												<span class="opener">Design</span>
+												<ul>
+													<li><a href="mechanical.html">Mechanical</a></li>
+													<li><a href="electrical.html">Electrical</a></li>
+													<li><a href="software.html">Software</a></li>
+												</ul>
+											</li>
+											<li>
+												<span class="opener">Timeline</span>
+												<ul>
+													<li><a href="sprint1.html">Sprint 1</a></li>
+													<li><a href="sprint2.html">Sprint 2</a></li>
+													<li><a href="sprint3.html">Sprint 3</a></li>
+													<li><a href="sprint4.html">Final Sprint</a></li>
+												</ul>
+											</li>
+											<li><a href="team.html">Team</a></li>
+											<li><a href="budget.html">Budget</a></li>
+										</ul>
+									</nav>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="template_assets/js/jquery.min.js"></script>
+			<script src="template_assets/js/skel.min.js"></script>
+			<script src="template_assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="template_assets/js/main.js"></script>
+
+	</body>
+</html>
