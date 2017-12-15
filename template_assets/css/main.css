@@ -2047,7 +2047,7 @@
 	}
 
 	body {
-		background: #ffffff;
+		background: #FFFFFF;
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after, body.is-resizing *, body.is-resizing *:before, body.is-resizing *:after {
@@ -3595,7 +3595,7 @@
 		-webkit-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
 		-ms-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
 		transition: margin-left 0.5s ease, box-shadow 0.5s ease;
-		background-color: #f5f6f7;
+		background-color: #f2f2f2;
 		font-size: 0.9em;
 		position: relative;
 		width: 26em;
