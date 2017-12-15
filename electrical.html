@@ -28,55 +28,37 @@
 
 							<!-- Content -->
 								<section>
+									<h1>Electrical</h1>
+									<hr class="major" />
+
+									<h2>Feeding Mechanism</h2>
+									<p>For the feeding mechanism, we used two 23Y stepper motors. Stepper motors are useful for this application because they produce very consistent movement, which means that we can ensure our two motors are driving at the same speed without using encoders.</p>
+									<p>To control our steppers, we used a DRV8825 stepper driver with a Pololu carrier. This chip, and the associated Arduino library, allowed us to control the motors with a single digital pin. The left and right motors were inverted so as to spin in opposite directions.</p>
+							<div class="row">
+										<div class="6u 12u$(small)">
+											<span class="motordriver"><img style="width:100%;" src="images/motordriver.png" alt="A photo of our motor driver circuit." /></span>
+										</div>
+										<div class="6u$ 12u$(small)">
+											<span class="feeding"><img style="width:100%;" src="images/feeding.png" alt="A photo of our feeding mechanism." /></span>
+										</div>
+									</div>
+									<br>
+									<p>In addition, our control system utilized microstepping. This means that for every step signal we send to the motors, the motors would move forward - in our case - one sixteenth of a step. This gave us even greater precision over our motors’ speeds and allowed us to more smoothly feed our song sheet through the device.</p>
+									<p><i>You can find our Arduino code <a href="https://github.com/natesampo/DropTheBeat/tree/master/stepperDRV">here.</a></i></p>
+
 
 									<hr class="major" />
-									<p>
 
-									Mechanical:
-									Embedded CAD
+									<h2>Marble Recycling</h2>
+									<p>Our marble recycling mechanism used a small but surprisingly high-torque DC motor, controlled by a digital pin on the Arduino. </p>
+									<span class="dcmotor"><img style="width:70%;" src="images/dcmotor.png" alt="A photo of our DC motor driving our wheel." /></span>
+									<br><br>
 
-									Memory Reading
-									Each song played by the machine is stored in a sheet of mechanical memory, with notes represented by holes. The song sheet is propelled through the machine using a rack and pinion system cut into its side. Two acrylic gears are driven by stepper motors to enable precise control of the feed rate and four additional free-spinning wheels keep the sheet aligned.
-									<br>
+									<p>The Arduino DIO pins, while producing five volts, do not supply any current, so you cannot power even a 5V motor directly from these pins. Instead, we made a simple circuit to act as a motor driver using a diode and a transistor. When the Arduino outputs 5V, the transistor allows current to flow through, and the motor spins. The diode prevents the backward flow of current and keeps the rest of the electronics safe.</p>
+									<p>You can see our final circuit diagram below: </p>
 
-									<span class="image main"><img src="images/mech1.jpg" alt="" /></span>
-									Marbles are stored in a reservoir above the song sheet and drop into the holes as the sheet slides past. The marbles are carried along until they reach a fixed set of holes underneath the sheet, at which point they drop through into the next part of the machine.
-									<br>
+									<span class="electricaldiagram"><img style="width:70%;" src="images/diagram.png" alt="Our final circuit diagram." /></span>
 
-									<span class="image main"><img src="images/mech2.PNG" alt="" /></span>
-									<br>
-
-									Playing Notes
-									The machine produces sound by launching marbles at steel pipes. The pipes have each been tuned to a different note by cutting them to a specific length. They are arranged in two rows with the front row raised slightly higher than the back row. The pipes are also mounted to sliding panels for easy removal and adjustment.
-									<br>
-
-									<span class="image main"><img src="images/mech3.png" alt="" /></span>
-									<br>
-
-									Marbles are launched into the pipes by a set of curved ramps running down from the feeding mechanism. A pattern of shorter and longer ramps allows marbles to be directed at the two different rows of tubes without the need for additional routing. The ramp geometry was initially estimated using simple physics calculations, and then adjusted experimentally to correct for the effects of friction.
-									<br>
-
-									<span class="image main"><img src="images/mech4.jpg" alt="" /></span>
-									<br>
-
-									Marble Recycling
-									After hitting the pipes, marbles need to be transported back up to the marble reservoir to be used again. A set of ramps at the base of the machine collect the marbles and direct them towards the lifting mechanism.
-									<br>
-									<iframe width="840" height="475" src="https://www.youtube.com/embed/LFbcxKK3VDU" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-									<br>
-									Marbles are raised back to the top of the machine by a large wheel divided into twelve compartments. The inner edge of each compartment is angled, so marbles will roll out when they reach the highest point of the wheel’s arc. The wheel is driven by a DC motor and supported on the other side by a bearing to eliminate friction.
-									<br>
-									<span class="image main"><img src="images/mech5.jpg" alt="" /></span>
-									<br>
-
-									As marbles roll out of the wheel, they are caught by a ramp at the top and routed back into the marble reservoir to begin the cycle again.
-									<br>
-
-									<span class="image main"><img src="images/mech6.jpg" alt="" /></span>
-									<br>
-								</p>
-
-									<hr class="major" />
 
 								</section>
 
@@ -94,7 +76,7 @@
 											<h2>Menu</h2>
 										</header>
 										<ul>
-											<li><a href="homepage.html">Homepage</a></li>
+											<li><a href="index.html">Homepage</a></li>
 											<li>
 												<span class="opener">Design</span>
 												<ul>
